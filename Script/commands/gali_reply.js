@@ -3,22 +3,22 @@ module.exports.config = {
 	name: "gali",
     version: "1.0.1",
 	hasPermssion: 0,
-	credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️", 
+	credits: "OMOR TE, MW Legends", 
 	description: "no prefix",
 	commandCategory: "no prefix",
 	usages: "abal",
-    cooldowns: 5, 
+    cooldowns: 10, 
 };
 
 module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
-	if (event.body.indexOf("fuck")==0 || event.body.indexOf("mc")==0 || event.body.indexOf("chod")==0 || event.body.indexOf("bal")==0 || event.body.indexOf("bc")==0 || event.body.indexOf("maa ki chut")==0 || event.body.indexOf("xod")==0 || event.body.indexOf("behen chod")==0 || event.body.indexOf("🖕")==0 || event.body.indexOf("madarchod")==0 || event.body.indexOf("chudi")==0 || event.body.indexOf("gala gali")==0) {
+	if (event.body.indexOf("Hello")==0 || event.body.indexOf("Hi")==0 || event.body.indexOf("Greetings")==0 || event.body.indexOf("hi")==0 || event.body.indexOf("Hey")==0 || event.body.indexOf("MW Legends")==0 || event.body.indexOf("Chatbot")==0 || event.body.indexOf("ChatBot")==0 || event.body.indexOf("hey")==0 || event.body.indexOf("Oi")==0 || event.body.indexOf("chatbot")==0 || event.body.indexOf("Ping")==0) {
 		var msg = {
-				body: "(Boss Dk , Gali q Dete Ho. Lund Katke Hath M rakh Dunga)",
+				body: "Greetings! I'm MW Legends Bot! Nice to meet you",
 			}
 			api.sendMessage(msg, threadID, messageID);
 		}
 	}
 	module.exports.run = function({ api, event, client, __GLOBAL }) {
 
-  }
+	}
