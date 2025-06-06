@@ -144,24 +144,5 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
     return sendReply(timeResponses[Math.floor(Math.random() * timeResponses.length)]);
   }
 
-  // 6. DEFAULT FALLBACK (50+ smart replies)
-  const fallbackResponses = [
-    `${name}, একটু পরিষ্কার করে বলবেন? 🤔`,  
-    `I didn't quite get that... 😅 Say again?`,  
-    `${name}, এই বিষয়ে আমি আরো জানতে চাই! 🔍`,  
-    `আমি এখনো শিখছি ${name}! 🧠 Explain differently?`,  
-    `Sorry ${name}, আমার বোধগম্য হলো না! 😢`,
-    `ওহো! আমার AI Brain আজকে ঠিক কাজ করছে না! 😆`,
-    `${name}, আপনি কি Bangla বা English এ বলবেন? 💬`,
-    `আমি Confused! 😵‍💫 একটু সহজ করে বলুন...`,
-    `এইটা আমার Programming এ নাই! 🥲 নতুন কিছু শিখব?`,
-    `কথাটা আমার Database এ নাই ${name}! 😅`
-  ];
-  
-  // 50% chance to reply to unrecognized messages
-  if (Math.random() < 0.5) {
-    return sendReply(fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)]);
-  }
-};
-
+ 
 module.exports.run = function({ api, event, client, __GLOBAL }) { }
