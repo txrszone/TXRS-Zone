@@ -1,148 +1,89 @@
 const fs = global.nodemodule["fs-extra"];
-const moment = require("moment-timezone");
-
-// User memory storage
-const userMemory = {};
-
 module.exports.config = {
   name: "Obot",
-  version: "4.0.0",
+  version: "2.0.1",
   hasPermssion: 0,
   credits: "OMOR TE",
-  description: "Fully Human-like AI Assistant Response",
+  description: "Interactive assistant bot",
   commandCategory: "Noprefix",
   usages: "noprefix",
-  cooldowns: 3,
+  cooldowns: 5,
 };
 
 module.exports.handleEvent = async function({ api, event, args, Threads, Users }) {
-  const { threadID, messageID, senderID } = event;
-  const name = await Users.getNameUser(senderID);
-  const currentTime = moment().tz("Asia/Dhaka").format("hh:mm A, D MMMM YYYY");
+  var { threadID, messageID } = event;
+  const moment = require("moment-timezone");
+  var id = event.senderID;
+  var name = await Users.getNameUser(event.senderID);
 
-  // Initialize user memory
-  if (!userMemory[senderID]) {
-    userMemory[senderID] = { 
-      lastInteraction: "",
-      mood: "neutral",
-      lastSeen: null 
-    };
+  var responses = [
+    "আপনাকে কিভাবে সাহায্য করতে পারি? 😊",
+    "হ্যালো! কেমন আছেন আপনি? 🌼",
+    "আপনার জন্য কি করতে পারি? 🤗",
+    "আপনার কথা শুনছি, বলুন... 👂",
+    "আজকে আপনার দিন কেমন যাচ্ছে? ☀️",
+    "আমি এখানে আছি আপনাকে সাহায্য করার জন্য! 💖",
+    "কিছু বলতে চাচ্ছেন? 😊",
+    "আপনার জন্য অপেক্ষা করছি... ⏳",
+    "সুন্দর একটা দিন হোক আপনার! 🌈",
+    "আমার সাথে চ্যাট করতে ভালো লাগছে! 😊",
+    "আপনার স্মার্ট অ্যাসিস্টেন্ট রেডি! 💡",
+    "কি নতুন কিছু শিখতে চান আজ? 📚",
+    "আপনার কথা শুনে আমি আনন্দিত! 😊"
+  ];
+  
+  var randResponse = responses[Math.floor(Math.random() * responses.length)];
+
+  // Custom responses for specific phrases
+  if (event.body.toLowerCase() === "miss you") {
+    return api.sendMessage("আপনাকে দেখে ভালো লাগছে! 😊", threadID);
   }
 
-  // Detect user mood (😊/😢/😡)
-  const detectMood = (text) => {
-    if (/(😢|😭|sad|unhappy|খারাপ|দুঃখিত|বিষন্ন)/i.test(text)) return "sad";
-    if (/(😡|🤬|angry|pissed|রাগ|গালি|ঝাল|মেজাজ)/i.test(text)) return "angry";
-    if (/(😂|😄|haha|lol|funny|মজা|হাসি|খুশি)/i.test(text)) return "happy";
-    return "neutral";
-  };
-
-  // Update user data
-  userMemory[senderID].mood = detectMood(event.body);
-  userMemory[senderID].lastInteraction = event.body;
-  userMemory[senderID].lastSeen = Date.now();
-
-  // Human-like typing delay (1-4 seconds)
-  const simulateTyping = async () => {
-    api.sendTypingIndicator(threadID);
-    await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 3000));
-  };
-
-  // Send message with natural feel
-  const sendReply = async (msg) => {
-    await simulateTyping();
-    api.sendMessage(msg, threadID, messageID);
-  };
-
-  // Input processing (supports mixed Bangla/English)
-  const input = event.body.toLowerCase().trim();
-
-  // ======================[500+ RESPONSES]====================== //
-
-  // 1. GREETINGS (100+ variations)
-  if (/^(hi|hello|hey|hola|হাই|হ্যালো|হেই|হেলো|আসসালাম|সালাম)/.test(input)) {
-    const greetings = [
-      `ওহে ${name}! কেমন আছো? 😊`,  
-      `আসসালামু আলাইকুম ${name}! 🤲`,  
-      `হাই ${name}! কি অবস্থা? 😄`,  
-      `${name} ভাই/আপু, কেমন যাচ্ছে? 🤗`,
-      `ওয়েলকাম ${name}! 😍`,
-      `হ্যালো বন্ধু! কাটছে? 😎`,
-      `কি খবর ${name}? 🌟`,
-      `অহে ${name}! Long time no see! 🥰`,
-      `সালাম ${name}! ভালো আছো তো? ❤️`,
-      `হেই there ${name}! What's up? 😉`
-    ];
-    return sendReply(greetings[Math.floor(Math.random() * greetings.length)]);
+  if (event.body.toLowerCase() === "assalamualaikum" || 
+      event.body.toLowerCase() === "salam") {
+    return api.sendMessage("ওয়ালাইকুম আসসালাম! 🤲", threadID);
   }
 
-  // 2. HOW ARE YOU? (50+ variations)
-  if (/(how are you|kemon acho|কেমন আছ|আচ্ছা আছ|কি অবস্থা)/.test(input)) {
-    const responses = [
-      `আলহামদুলিল্লাহ, ভালো আছি ${name}! তোমার কি খবর? 😊`,  
-      `I'm great ${name}! How about you? 🌟`,  
-      `জীবন চলছে ${name}! তুমি কেমন আছো? ❤️`,  
-      `আমি তো ঠিক আছি, কিন্তু তোমাকে দেখে ভালো লাগছে! 😍`,
-      `All good ${name}! তুমি বলো? 😄`,
-      `Alhamdulillah, সবই ভালো! তোমার দিনটা কেমন যাচ্ছে? ☀️`,
-      `I'm doing awesome ${name}! তোমার কি কোনো সমস্যা? 🤗`,
-      `ভালো আছি বন্ধু! তুমি বলো কেমন আছ? 😊`,
-      `পরিচিতজনের খোঁজ নেওয়া ভালো অভ্যাস! 😇 আমি ভালো, তুমি?`,
-      `আমি একটা বট, কিন্তু তুমি মানুষ! তোমার খবরটা更重要! 😊`
-    ];
-    return sendReply(responses[Math.floor(Math.random() * responses.length)]);
+  if (event.body.toLowerCase() === "thank you" || 
+      event.body.toLowerCase() === "thanks") {
+    return api.sendMessage("আপনাকে স্বাগতম! 😊", threadID);
   }
 
-  // 3. I'M FINE (30+ variations)
-  if (/(ami valo|i'm fine|আমি ভাল|ভাল আছি|okay|ঠিক আছি)/.test(input)) {
-    const responses = [
-      `সুন্দর! 😍 ${name}, আজকে কি ভালো কিছু হয়েছে?`,  
-      `Great to hear! 🎉 ${name}, need any help?`,  
-      `Alhamdulillah! ❤️ ${name}, আল্লাহ তোমাকে সুস্থ রাখুন!`,  
-      `খুশি হলাম শুনে! 😊 ${name}, আরো ভালো সময় আসবে ইনশাআল্লাহ!`,
-      `That's awesome ${name}! 😎 Keep smiling!`,
-      `জানতাম তুমি Strong! 💪 আরো বলো!`,
-      `ভালো থাকা তো সৌভাগ্যের বিষয়! 😇`,
-      `Happy to hear that ${name}! 🌈`,
-      `তোমার ভালো খবর শুনে আমারও ভালো লাগছে! ❤️`,
-      `চালাও then! 😄 কোনো প্রয়োজন হলে বলো`
-    ];
-    return sendReply(responses[Math.floor(Math.random() * responses.length)]);
+  if (event.body.toLowerCase() === "how are you" || 
+      event.body.toLowerCase() === "kemon acho") {
+    return api.sendMessage("আমি ভালো আছি, ধন্যবাদ! আপনার দিনটি ভালো যাক 🌸", threadID);
   }
 
-  // 4. SAD MOOD (20+ comforting responses)
-  if (userMemory[senderID].mood === "sad") {
-    const comfort = [
-      `${name}, মনে খারাপ লাগছে? আমি আছি তোমার সাথে! 🤗`,  
-      "কেঁদো না... শেয়ার করলে ভালো লাগবে! 💖",  
-      "জীবনে Ups-Downs আসে, কিন্তু আল্লাহ ভালো কিছু দিবেন! ☝️",
-      `${name}, bad times don't last forever! 🌈`,
-      "তুমি Strong মানুষ! এইটাও পারবে! 💪",
-      "চোখের পানি মুছে ফেলো... নতুন করে শুরু করো! 😊",
-      "আমি যদি হাত বাড়াতে পারতাম, একটা Hug দিতাম! 🤗",
-      "কষ্ট পেয়ো না... কথা বলে মন হালকা করো! 💬",
-      "Remember: After every storm, there's a rainbow! 🌈",
-      "তুমি Alone না... আমি আছি! ❤️"
-    ];
-    return sendReply(comfort[Math.floor(Math.random() * comfort.length)]);
+  if (event.body.toLowerCase() === "owner" || 
+      event.body.toLowerCase() === "creator") {
+    return api.sendMessage("এই বটটি Omor TE দ্বারা তৈরি হয়েছে", threadID);
   }
 
-  // 5. TIME/DATE (15+ variations)
-  if (/(time|সময়|কটা বাজে|তারিখ|date)/.test(input)) {
-    const timeResponses = [
-      `🕒 এখন বাংলাদেশ সময়: **${currentTime}**`,  
-      `⏰ সময় দেখছো? এখন: ${currentTime}`,  
-      `📅 আজকের তারিখ: ${moment().tz("Asia/Dhaka").format("D MMMM YYYY")}`,  
-      `⌚ ${name}, সময় এখন: ${moment().tz("Asia/Dhaka").format("h:mm A")}`,
-      `দেখো সময়: ${currentTime} - কাজের সময় নষ্ট কইরো না! 😄`,
-      `সময় তো **${currentTime}**, কিন্তু সময়ের মূল্য টের পাবে যখন ফুরাবে! 😉`,
-      `ঘড়িতে এখন: ${currentTime} ⏳`,
-      `Time check? It's ${moment().tz("Asia/Dhaka").format("h:mm A")} now!`,
-      `আজকে ${moment().tz("Asia/Dhaka").format("D MMMM")}, সময় বয়ে যাচ্ছে! 😊`,
-      `এখন সময় কাজ করার! 🕒 ${currentTime}`
-    ];
-    return sendReply(timeResponses[Math.floor(Math.random() * timeResponses.length)]);
+  if (event.body.toLowerCase() === "help" || 
+      event.body.toLowerCase() === "sahajjo") {
+    return api.sendMessage("আমি আপনাকে সাহায্য করতে পারি: 1. তথ্য খুঁজে দিতে 2. সময় জানাতে 3. গান/ছবি সাজেস্ট করতে। কী চান?", threadID);
   }
 
- 
+  if (event.body.toLowerCase() === "time" || 
+      event.body.toLowerCase() === "somoy") {
+    // Corrected time format: 12-hour with AM/PM and DD/MM/YYYY
+    const currentTime = moment().tz("Asia/Dhaka").format("hh:mm:ss A DD/MM/YYYY");
+    return api.sendMessage(`এখন বাংলাদেশ সময়: ${currentTime} ⏰`, threadID);
+  }
+
+  if (event.body.toLowerCase() === "i love you" || 
+      event.body.toLowerCase() === "valobashi") {
+    return api.sendMessage("ধন্যবাদ! 😊 মানুষ ও প্রযুক্তির মধ্যে সুন্দর সম্পর্ক গড়ে উঠুক ❤️", threadID);
+  }
+
+  // General bot trigger
+  if (event.body.toLowerCase().startsWith("bot") || 
+      event.body.toLowerCase().startsWith("obot")) {
+    var msg = {
+      body: `${name}, ${randResponse}`
+    }
+    return api.sendMessage(msg, threadID, messageID);
+  }
+}
+
 module.exports.run = function({ api, event, client, __GLOBAL }) { }
