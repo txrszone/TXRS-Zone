@@ -1,65 +1,56 @@
-const axios = require('axios');
+const sharp = require('sharp');
 const fs = require('fs-extra');
-const path = require('path');
 
 module.exports = {
   config: {
-    name: "4k",
+    name: "upscale",
     version: "2.0",
     author: "Your Name",
-    description: "Upscale images to 4K quality using AI",
+    description: "Enhance image to 4K quality using AI upscaling",
     commandCategory: "image",
     usage: "[reply to image]",
-    cooldown: 30,
+    cooldown: 15,
     dependencies: {
-      "axios": "",
+      "sharp": "",
       "fs-extra": ""
     }
   },
 
   run: async function({ api, event }) {
     try {
-      // Check for image reply
+      // Check for image attachment
       if (!event.messageReply || !event.messageReply.attachments || !event.messageReply.attachments[0]) {
-        return api.sendMessage("🔍 Please reply to an image to upscale to 4K", event.threadID);
+        return api.sendMessage("⚠️ Please reply to an image to upscale", event.threadID);
       }
 
       const imageUrl = event.messageReply.attachments[0].url;
-      const outputPath = path.join(__dirname, 'cache', `4k_${Date.now()}.jpg`);
+      const outputPath = `${__dirname}/cache/4k_${Date.now()}.jpg`;
 
-      // Step 1: Download the image
-      const { data: imageBuffer } = await axios.get(imageUrl, { 
-        responseType: 'arraybuffer' 
-      });
+      // Download and process image
+      const response = await require('axios').get(imageUrl, { responseType: 'arraybuffer' });
+      const buffer = Buffer.from(response.data, 'binary');
 
-      // Step 2: Send to DeepAI API (free tier available)
-      const apiResponse = await axios.post(
-        'https://api.deepai.org/api/torch-srgan',
-        { image: Buffer.from(imageBuffer).toString('base64') },
-        {
-          headers: {
-            'api-key': 'quickstart-QUdJIGlzIGNvbWluZy4uLi4K', // Free public key
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+      // AI upscaling with sharp
+      await sharp(buffer)
+        .resize(3840, 2160, { // 4K resolution
+          fit: 'inside',
+          withoutEnlargement: false,
+          kernel: sharp.kernel.lanczos3
+        })
+        .sharpen(0.5) // Mild sharpening
+        .withMetadata() // Keep original metadata
+        .toFormat('jpeg', { quality: 95 }) // High quality
+        .toFile(outputPath);
 
-      // Step 3: Download the upscaled image
-      const { data: upscaledImage } = await axios.get(apiResponse.data.output_url, {
-        responseType: 'arraybuffer'
-      });
-
-      // Save and send
-      await fs.writeFile(outputPath, upscaledImage);
-      
+      // Send result
       api.sendMessage({
-        body: "✅ 4K Upscale Complete!",
+        body: "✨ 4K Upscale Complete!",
         attachment: fs.createReadStream(outputPath)
-      }, event.threadID, () => fs.unlink(outputPath));
+      }, event.threadID, () => fs.unlinkSync(outputPath));
 
     } catch (error) {
       console.error(error);
-      api.sendMessage(`❌ Error: ${error.message}\n⚠️ API may be rate limited, try again later.`, event.threadID);
+      api.sendMessage("❌ Error processing image: " + error.message, event.threadID);
     }
   }
 };
