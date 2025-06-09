@@ -1,6 +1,7 @@
+
 module.exports.config = {
   name: "bombsms",
-  version: "2.0.0",
+  version: "3.0.0",
   hasPermssion: 0,
   credits: "OMOR TE from THE DARK WEB", // Original developer credit preserved
   description: "SMS বোম্বার বন্ধ করতে /bombsms off",
@@ -50,11 +51,11 @@ module.exports.run = async ({ api, event, args }) => {
 ╚═════╝░░╚════╝░░░░░░░╚══════╝╚═╝░╚════╝░
 
 ××××××××××××××××××××××××××××××××××××××××××××
-DEVELOPER :Ahsan Habib 
-GITHUB    : ahmhabib01
+DEVELOPER : OMOR TE
+GITHUB    : ...
 VERSION   : 1.0
 PROJECT   : SMS BOMBER 
-FACEBOOK  : Bangladesh Cyber 2.0
+FACEBOOK  : Omor TE
 ××××××××××××××××××××××××××××××××××××××××××××
 
 ব্যবহার:
@@ -369,4 +370,4 @@ Team: MW LEGENDS`;
     })();
 };
 
-      
+  
