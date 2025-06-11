@@ -1,4 +1,4 @@
-Content: const axios = require('axios');
+const axios = require('axios');
 const fs = require('fs');
 
 const xyz = "ArYAN";
