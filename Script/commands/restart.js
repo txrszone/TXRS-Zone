@@ -6,10 +6,10 @@ module.exports.config = {
 	description: "Restart Bot",
 	commandCategory: "system",
 	usages: "",
-	cooldowns: 5
+	cooldowns: 30
 };
 
 module.exports.run = async ({ api, event, args }) => {
 	const { threadID, messageID } = event;
-	return api.sendMessage(`${global.config.BOTNAME} Bot are now Restarting...`, threadID, () => process.exit(1));
+	return api.sendMessage(`${global.config.BOTNAME} Bot is now Restarting...♻️🔘`, threadID, () => process.exit(1));
 }
