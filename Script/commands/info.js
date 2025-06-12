@@ -61,7 +61,10 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
  "MintBot cân spam nhưng không có gì đáng để bạn spam."
  ];
  var link = [
-"https://i.postimg.cc/0jRGknT9/FB-IMG-1744474199349.jpg", "https://i.postimg.cc/Y9KK7KC0/Polish-20250526-101350151.jpg", "https://i.postimg.cc/brgK1ZHS/Hitube-c-Rb-Pat-Cm-XZ-2025-05-26-10-05-46.jpg", "https://i.postimg.cc/MT84479j/Hitube-Bt4-Wyjgo-WZ-2025-05-26-10-05-58.jpg", "https://i.postimg.cc/YS8YKk3f/received-395252956651820.jpg", "https://i.postimg.cc/0N5ZJVXn/a844a740b33eba79b486744759914953-1.jpg",
+"https://i.postimg.cc/0jRGknT9/FB-IMG-1744474199349.jpg", "https://i.postimg.cc/Y9KK7KC0/Polish-20250526-101350151.jpg", "https://i.postimg.cc/brgK1ZHS/Hitube-c-Rb-Pat-Cm-XZ-2025-05-26-10-05-46.jpg", "https://i.postimg.cc/MT84479j/Hitube-Bt4-Wyjgo-WZ-2025-05-26-10-05-58.jpg", "https://i.postimg.cc/YS8YKk3f/received-395252956651820.jpg", "https://i.postimg.cc/0N5ZJVXn/a844a740b33eba79b486744759914953-1.jpg", "https://i.postimg.cc/YCtFS03n/FB-IMG-1748855056576.jpg",
+"https://i.postimg.cc/cCDp8r3R/FB-IMG-1748855063027.jpg",
+"https://i.postimg.cc/sxDFXpMf/FB-IMG-1748855065465.jpg",
+"https://i.postimg.cc/DZcknCyY/FB-IMG-1748855075592.jpg",
  ];
 
  var i = 1;
@@ -153,7 +156,10 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
  "MintBot cân spam nhưng không có gì đáng để bạn spam."
  ];
  var link = [
-"https://i.postimg.cc/0jRGknT9/FB-IMG-1744474199349.jpg", "https://i.postimg.cc/Y9KK7KC0/Polish-20250526-101350151.jpg", "https://i.postimg.cc/brgK1ZHS/Hitube-c-Rb-Pat-Cm-XZ-2025-05-26-10-05-46.jpg", "https://i.postimg.cc/MT84479j/Hitube-Bt4-Wyjgo-WZ-2025-05-26-10-05-58.jpg", "https://i.postimg.cc/YS8YKk3f/received-395252956651820.jpg", "https://i.postimg.cc/0N5ZJVXn/a844a740b33eba79b486744759914953-1.jpg",
+"https://i.postimg.cc/0jRGknT9/FB-IMG-1744474199349.jpg", "https://i.postimg.cc/Y9KK7KC0/Polish-20250526-101350151.jpg", "https://i.postimg.cc/brgK1ZHS/Hitube-c-Rb-Pat-Cm-XZ-2025-05-26-10-05-46.jpg", "https://i.postimg.cc/MT84479j/Hitube-Bt4-Wyjgo-WZ-2025-05-26-10-05-58.jpg", "https://i.postimg.cc/YS8YKk3f/received-395252956651820.jpg", "https://i.postimg.cc/0N5ZJVXn/a844a740b33eba79b486744759914953-1.jpg", "https://i.postimg.cc/YCtFS03n/FB-IMG-1748855056576.jpg",
+"https://i.postimg.cc/cCDp8r3R/FB-IMG-1748855063027.jpg",
+"https://i.postimg.cc/sxDFXpMf/FB-IMG-1748855065465.jpg",
+"https://i.postimg.cc/DZcknCyY/FB-IMG-1748855075592.jpg",
  ]; 
  var i = 1;
  var msg = [];
