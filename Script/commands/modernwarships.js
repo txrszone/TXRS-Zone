@@ -70,6 +70,10 @@ module.exports.run = async ({ api, event }) => {
 "https://i.postimg.cc/tghYJMBv/FB-IMG-1748855063027.jpg",
 "https://i.postimg.cc/ZnqRfK4X/FB-IMG-1748855065465.jpg",
 "https://i.postimg.cc/MZsXnRYw/FB-IMG-1748855075592.jpg",
+"https://i.postimg.cc/YCtFS03n/FB-IMG-1748855056576.jpg",
+"https://i.postimg.cc/cCDp8r3R/FB-IMG-1748855063027.jpg",
+"https://i.postimg.cc/sxDFXpMf/FB-IMG-1748855065465.jpg",
+"https://i.postimg.cc/DZcknCyY/FB-IMG-1748855075592.jpg",
  ];
 
   const imgURL = links[Math.floor(Math.random() * links.length)];
