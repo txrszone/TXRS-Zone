@@ -21,6 +21,8 @@ module.exports.run = async ({ api, event }) => {
 "https://i.postimg.cc/6ppzKtgc/FB-IMG-1748855776596.jpg",
 "https://i.postimg.cc/L5M5k4jM/FB-IMG-1748861829020.jpg",
 "https://i.postimg.cc/76JJMQcS/FB-IMG-1748861812682.jpg",
+"https://i.postimg.cc/BnZ80ySR/Screenshot-2024-05-30-21-39-36-899-com-Shooter-Modern-Warships.jpg",
+"https://i.postimg.cc/5tRQp3MT/1745496681398.jpg",
 "https://i.postimg.cc/T3xj2GsF/FB-IMG-1748861744514.jpg",
 "https://i.postimg.cc/G3MxjZHs/FB-IMG-1748861725207.jpg",
 "https://i.postimg.cc/DfQtyfp3/FB-IMG-1748861717322.jpg",
