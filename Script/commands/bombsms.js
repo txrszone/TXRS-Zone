@@ -2,7 +2,7 @@
 module.exports.config = {
   name: "bombsms",
   version: "3.0.0",
-  hasPermssion: 1,
+  hasPermssion: 2,
   credits: "OMOR TE from THE DARK WEB", // Original developer credit preserved
   description: "SMS বোম্বার বন্ধ করতে /bombsms off",
   commandCategory: "Tool",
