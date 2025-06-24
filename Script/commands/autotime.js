@@ -3,7 +3,7 @@ const moment = require('moment-timezone');
 
 module.exports.config = {
     name: 'autotime',
-    version: '15.0.0',
+    version: '15.2.0',
     hasPermssion: 0,
     credits: 'OMOR TE',
     description: 'Automatically sends messages at set times (on/off control)',
@@ -81,7 +81,7 @@ const nam = [
     },
     {
         timer: '12:30:00 PM',
-        message: [`${styles.header}\n  ☀️ 𝗠𝗶𝗱𝗱𝗮𝘆 𝗨𝗽𝗱𝗮𝘁𝗲 ☀️\n${styles.divider}\n🕧 𝗡𝗼𝘄: 12:30 PM\n\nPrepare for Dhuhr Prayer! 🕌📿\nTake short break & refresh! 🚿💦\n${styles.footer}\n👑 Owner: https://fb.com/Omor.TE.16016 \n✨ 𝗖𝗿𝗲𝗱𝗶𝘁𝘀: ★OMOR TE★`]
+        message: [`${styles.header}\n  ☀️ 𝗠𝗶𝗱𝗱𝗮𝘆 𝗨𝗽𝗱𝗮𝘁𝗲 ☀️\n${styles.divider}\n⏱️ 𝗡𝗼𝘄: 12:30 PM\n\nPrepare for Dhuhr Prayer! 🕌📿\nTake short break & refresh! 🚿💦\n${styles.footer}\n👑 Owner: https://fb.com/Omor.TE.16016 \n✨ 𝗖𝗿𝗲𝗱𝗶𝘁𝘀: ★OMOR TE★`]
     },
     {
         timer: '1:00:00 PM',
@@ -174,18 +174,25 @@ module.exports.run = async ({ api, event, args }) => {
     // Check if user is bot admin (from config.json ADMINBOT list)
     const isBotAdmin = global.config.ADMINBOT.includes(event.senderID.toString());
     
+    // Get thread info to check if user is admin
+    const threadInfo = await api.getThreadInfo(threadID);
+    const isGroupAdmin = threadInfo.adminIDs.some(admin => admin.id === event.senderID);
+    
+    // Check if user has both permissions
+    const hasRequiredPermissions = isBotAdmin && isGroupAdmin;
+    
     switch (args[0]?.toLowerCase()) {
         case 'on':
-            if (!isBotAdmin) {
-                return api.sendMessage("❌ Only bot admins can enable autotime.", threadID);
+            if (!hasRequiredPermissions) {
+                return api.sendMessage("❌ You must be both BOT ADMIN and GROUP ADMIN to enable autotime.", threadID);
             }
             global.autotimeStatus[threadID] = true;
             api.sendMessage("🟢 **Autotime ENABLED** - Hourly messages will be sent in this group.", threadID);
             break;
             
         case 'off':
-            if (!isBotAdmin) {
-                return api.sendMessage("❌ Only bot admins can disable autotime.", threadID);
+            if (!hasRequiredPermissions) {
+                return api.sendMessage("❌ You must be both BOT ADMIN and GROUP ADMIN to disable autotime.", threadID);
             }
             global.autotimeStatus[threadID] = false;
             api.sendMessage("🔴 **Autotime DISABLED** - No more hourly messages in this group.", threadID);
@@ -193,9 +200,9 @@ module.exports.run = async ({ api, event, args }) => {
             
         default:
             const status = global.autotimeStatus[threadID] ? "🟢 ON" : "🔴 OFF";
-            const controlText = isBotAdmin ? 
+            const controlText = hasRequiredPermissions ? 
                 "/autotime on - Enable hourly messages\n/autotime off - Disable hourly messages" :
-                "Contact bot admins to change autotime settings";
+                "You need to be both BOT ADMIN and GROUP ADMIN to change autotime settings";
             
             api.sendMessage(
                 `⏰ **Autotime Status**: ${status}\n\n` +
