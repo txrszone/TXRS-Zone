@@ -3,12 +3,12 @@ const moment = require('moment-timezone');
 
 module.exports.config = {
     name: 'autotime',
-    version: '10.1.0',
+    version: '15.0.0',
     hasPermssion: 0,
     credits: 'OMOR TE',
-    description: 'Automatically sends messages at set times',
+    description: 'Automatically sends messages at set times (on/off control)',
     commandCategory: 'group messenger',
-    usages: '[]',
+    usages: '[on/off]',
     cooldowns: 3
 };
 
@@ -18,6 +18,9 @@ const styles = {
     footer: "╚════════════════╝",
     divider: "➖➖➖➖➖➖➖➖➖➖"
 };
+
+// Global variable with default ON status
+global.autotimeStatus = global.autotimeStatus || {};
 
 const nam = [
     {
@@ -135,7 +138,9 @@ const nam = [
 ];
 
 module.exports.onLoad = async (o) => {
-    setInterval(() => {
+    if (global.autotimeInterval) clearInterval(global.autotimeInterval);
+    
+    global.autotimeInterval = setInterval(() => {
         const bangladeshTime = moment().tz('Asia/Dhaka');
         const formattedTime = bangladeshTime.format('h:mm:ss A');
         
@@ -143,13 +148,63 @@ module.exports.onLoad = async (o) => {
         const event = nam.find(item => item.timer === formattedTime);
         
         if (event) {
-            console.log(`Sending message for ${formattedTime}`);
+            console.log(`[AUTOTIME] ${formattedTime} triggered`);
             global.data.allThreadID.forEach(threadID => {
-                o.api.sendMessage(r(event.message), threadID);
+                // Default ON for new groups
+                if (typeof global.autotimeStatus[threadID] === 'undefined') {
+                    global.autotimeStatus[threadID] = true;
+                }
+                
+                if (global.autotimeStatus[threadID]) {
+                    o.api.sendMessage(r(event.message), threadID);
+                }
             });
         }
     }, 1000);
 };
 
-module.exports.run = o => {};
-  
+module.exports.run = async ({ api, event, args }) => {
+    const threadID = event.threadID;
+    
+    // Initialize if not exists (default ON)
+    if (typeof global.autotimeStatus[threadID] === 'undefined') {
+        global.autotimeStatus[threadID] = true;
+    }
+    
+    // Check if user is admin (for on/off commands)
+    const threadInfo = await api.getThreadInfo(threadID);
+    const isAdmin = event.senderID === api.getCurrentUserID() || 
+                   threadInfo.adminIDs.some(admin => admin.id == event.senderID);
+    
+    switch (args[0]?.toLowerCase()) {
+        case 'on':
+            if (!isAdmin) {
+                return api.sendMessage("❌ Only group admins can enable autotime.", threadID);
+            }
+            global.autotimeStatus[threadID] = true;
+            api.sendMessage("🟢 **Autotime ENABLED** - Hourly messages will be sent in this group.", threadID);
+            break;
+            
+        case 'off':
+            if (!isAdmin) {
+                return api.sendMessage("❌ Only group admins can disable autotime.", threadID);
+            }
+            global.autotimeStatus[threadID] = false;
+            api.sendMessage("🔴 **Autotime DISABLED** - No more hourly messages in this group.", threadID);
+            break;
+            
+        default:
+            const status = global.autotimeStatus[threadID] ? "🟢 ON" : "🔴 OFF";
+            const controlText = isAdmin ? 
+                "/autotime on - Enable hourly messages\n/autotime off - Disable hourly messages" :
+                "Contact group admins to change autotime settings";
+            
+            api.sendMessage(
+                `⏰ **Autotime Status**: ${status}\n\n` +
+                "Usage:\n" +
+                `${controlText}\n` +
+                "/autotime - Check current status",
+                threadID
+            );
+    }
+};
