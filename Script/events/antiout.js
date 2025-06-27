@@ -36,27 +36,3 @@ module.exports.run = async({ event, api, Threads, Users }) => {
     });
   }
 }
-
-module.exports.handleCommand = async ({ event, api, Threads, args }) => {
-  const { threadID, messageID } = event;
-  let data = (await Threads.getData(threadID)).data || {};
-  
-  switch (args[0]) {
-    case 'on':
-      global.antiout[threadID] = true;
-      data.antiout = true;
-      await Threads.setData(threadID, { data });
-      api.sendMessage("Antiout feature has been activated for this group!", threadID, messageID);
-      break;
-      
-    case 'off':
-      global.antiout[threadID] = false;
-      data.antiout = false;
-      await Threads.setData(threadID, { data });
-      api.sendMessage("Antiout feature has been deactivated for this group!", threadID, messageID);
-      break;
-      
-    default:
-      api.sendMessage("Invalid command. Usage:\n/antiout on - activate antiout\n/antiout off - deactivate antiout", threadID, messageID);
-  }
-}
