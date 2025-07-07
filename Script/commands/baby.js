@@ -4,7 +4,7 @@ const simsim = "https://cyber-simsimi.onrender.com";
 module.exports.config = {
  name: "baby",
  version: "1.0.1",
- hasPermssion: 0,
+ hasPermssion: 2,
  credits: "ULLASH",
  description: "Cute AI Baby Chatbot  | Talk, Teach & Chat with Emotion 😌",
  commandCategory: "simsim",
