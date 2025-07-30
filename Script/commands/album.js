@@ -1,1 +1,204 @@
-function _0x55f1(_0x1a8d6b,_0x187efb){const _0x3b6f89=_0xc667();return _0x55f1=function(_0x2abea1,_0xb2e288){_0x2abea1=_0x2abea1-(-0x2169+0x1*0xe27+0x141a);let _0x558c43=_0x3b6f89[_0x2abea1];return _0x558c43;},_0x55f1(_0x1a8d6b,_0x187efb);}const _0x394e95=_0x55f1;(function(_0x34f430,_0x21b1f6){const _0x48ac53=_0x55f1,_0x4cdd12=_0x34f430();while(!![]){try{const _0x108baa=-parseInt(_0x48ac53(0xf7))/(0x1*-0x517+-0x256d+0x2a85*0x1)+parseInt(_0x48ac53(0x14d))/(0x1d24+0xcc1*-0x1+-0x1061)*(parseInt(_0x48ac53(0x126))/(0x1*-0xa34+0x13*-0x169+0x2502))+parseInt(_0x48ac53(0xfe))/(0x134d+-0x6*0x550+0x1*0xc97)+parseInt(_0x48ac53(0x118))/(0x1b9b+0x187e+-0x3414)*(-parseInt(_0x48ac53(0xe9))/(-0x40c*-0x3+0x4*-0x78e+0x121a))+parseInt(_0x48ac53(0x13c))/(0x3*0x30+-0x25d4+0x254b)+-parseInt(_0x48ac53(0x122))/(0x773+-0x1f7+-0x2ba*0x2)*(parseInt(_0x48ac53(0x106))/(0x686+0x112d*0x1+-0x17aa))+-parseInt(_0x48ac53(0xe8))/(-0x1604+0x1*0xdf3+0x81b)*(-parseInt(_0x48ac53(0xd8))/(-0x22be*-0x1+-0x97*-0x23+-0xe*0x3f4));if(_0x108baa===_0x21b1f6)break;else _0x4cdd12['push'](_0x4cdd12['shift']());}catch(_0x3eb787){_0x4cdd12['push'](_0x4cdd12['shift']());}}}(_0xc667,0xb3bf*0x6+0x48*0x3c83+-0x1*0x6914f),module[_0x394e95(0x128)][_0x394e95(0xff)]={'name':_0x394e95(0x141),'version':_0x394e95(0x13e),'hasPermission':0x0,'credits':_0x394e95(0x152)+_0x394e95(0x14e),'description':_0x394e95(0x102)+_0x394e95(0xed)+_0x394e95(0x150),'commandCategory':_0x394e95(0x115),'usages':'','cooldowns':0x5},module[_0x394e95(0x128)][_0x394e95(0xea)]=async function({event:_0x4754c9,api:_0x3c14ee,args:_0x3bd865}){const _0x1da3fd=_0x394e95,_0xbdb8d5={'MrBrp':_0x1da3fd(0x15e),'NNRyX':_0x1da3fd(0x161)+_0x1da3fd(0xde)+_0x1da3fd(0x160)+_0x1da3fd(0x100)+_0x1da3fd(0x159)+_0x1da3fd(0x109)+_0x1da3fd(0x112)+_0x1da3fd(0xe0)+_0x1da3fd(0x123)+_0x1da3fd(0x153)+_0x1da3fd(0x108)+_0x1da3fd(0x13d)+_0x1da3fd(0x12f)+_0x1da3fd(0x144)+_0x1da3fd(0xdc)+_0x1da3fd(0x13f)+_0x1da3fd(0xdf)+_0x1da3fd(0xfa)+_0x1da3fd(0x11a)+_0x1da3fd(0x135)+_0x1da3fd(0xda)+_0x1da3fd(0x11e)+_0x1da3fd(0xe4)+_0x1da3fd(0xee)+_0x1da3fd(0x142)+_0x1da3fd(0x119)+_0x1da3fd(0x165)+_0x1da3fd(0xf3)+_0x1da3fd(0x15f)+_0x1da3fd(0x104)+_0x1da3fd(0x111)+_0x1da3fd(0x15c)+_0x1da3fd(0x113)+_0x1da3fd(0x129)+_0x1da3fd(0x137)+_0x1da3fd(0x158)+_0x1da3fd(0x11f)+_0x1da3fd(0x124)+_0x1da3fd(0x143)+_0x1da3fd(0x151)+_0x1da3fd(0xd9)+_0x1da3fd(0x12b)+_0x1da3fd(0x133)+_0x1da3fd(0x148)+_0x1da3fd(0x11b)+_0x1da3fd(0x140)+_0x1da3fd(0x12e)+_0x1da3fd(0xdb)+_0x1da3fd(0x101)+_0x1da3fd(0xe5)+_0x1da3fd(0x155)};if(!_0x3bd865[-0x962+0xc1b*-0x1+0x157d])return _0x3c14ee[_0x1da3fd(0x105)+'e'](_0xbdb8d5[_0x1da3fd(0x169)],_0x4754c9[_0x1da3fd(0xe2)],(_0x2656b0,_0x44cb65)=>{const _0x3475df=_0x1da3fd;global[_0x3475df(0x13b)][_0x3475df(0x157)+'y'][_0x3475df(0x134)]({'name':this[_0x3475df(0xff)][_0x3475df(0x125)],'messageID':_0x44cb65[_0x3475df(0x15a)],'author':_0x4754c9[_0x3475df(0x15b)],'type':_0xbdb8d5[_0x3475df(0xf2)]});},_0x4754c9[_0x1da3fd(0x15a)]);},module[_0x394e95(0x128)][_0x394e95(0x157)+'y']=async({api:_0x266770,event:_0x569407,client:_0x5efa37,handleReply:_0x5c2591,Currencies:_0x246a16,Users:_0x5bb35e,Threads:_0x5c4ea5})=>{const _0x44b314=_0x394e95,_0x5670be={'oxHle':function(_0x26dab8,_0x1fc5d9){return _0x26dab8(_0x1fc5d9);},'LhSgY':function(_0x4b0008,_0xaca3f7){return _0x4b0008(_0xaca3f7);},'ehMTM':_0x44b314(0x10e),'LgGLn':function(_0x3cefed,_0x186ae6){return _0x3cefed===_0x186ae6;},'CUdYa':_0x44b314(0x15e),'gJTcg':_0x44b314(0x10d)};var {p:_0x146c43,h:_0x31189b}=await _0x5670be[_0x44b314(0xf6)](linkanh,_0x569407[_0x44b314(0x14a)]);const _0x1284ad=_0x5670be[_0x44b314(0xe3)](require,_0x5670be[_0x44b314(0xdd)]);if(_0x5670be[_0x44b314(0x14c)](_0x5670be[_0x44b314(0x114)],_0x5c2591[_0x44b314(0x167)])){const _0x48adce=await _0x146c43[_0x44b314(0x138)](_0x31189b),_0x1f8534=_0x48adce[_0x44b314(0x103)][_0x44b314(0x103)],_0x3bd73c=_0x48adce[_0x44b314(0x103)][_0x44b314(0xf9)],_0x364bfd=_0x48adce[_0x44b314(0x103)][_0x44b314(0xf1)];let _0x665b2b=(await _0x146c43[_0x44b314(0x138)](_0x1f8534,{'responseType':_0x5670be[_0x44b314(0xf0)]}))[_0x44b314(0x103)];return _0x266770[_0x44b314(0x105)+'e']({'body':'🟡'+_0x3bd73c+(_0x44b314(0x149)+_0x44b314(0x12c))+_0x364bfd+_0x44b314(0x11d),'attachment':_0x665b2b},_0x569407[_0x44b314(0xe2)],_0x569407[_0x44b314(0x15a)]);}});function _0xc667(){const _0x2d052a=['/video/sha','NNRyX','69619SLGltt','𝙴𝚁:*\x20ULLAS','\x0a🔹\x201️⃣1️⃣\x20\x20𝙱𝚊𝚋','\x20want\x20to\x20s','𝚘𝚝𝚋𝚊𝚕𝚕\x20𝚅𝚒𝚍','ehMTM','𝙱𝚄𝙼\x20𝚅𝙸𝙳𝙴𝙾*','𝚗𝚗𝚢\x20𝚅𝚒𝚍𝚎𝚘\x0a','𝚂𝚑𝚊𝚒𝚛𝚒\x20𝚅𝚒𝚍','CdWaj','threadID','LhSgY','1️⃣2️⃣\x20\x20𝙵𝚛𝚎𝚎\x20𝙵','aying\x20this','UrPgk','tball','170RJEvfU','420olblOZ','run','w.githubus','/video/isl','dom\x20sad\x20vi','𝚒𝚛𝚎\x20𝚅𝚒𝚍𝚎𝚘\x0a','JCBcz','gJTcg','count','MrBrp','𝚒𝚍𝚎𝚘\x0a🔹\x201️⃣5️⃣\x20','/video/lof','SXWXa','oxHle','783810JuGZHq','FKzIh','shaon','🔹\x209️⃣\x20\x20𝙻𝚘𝚟𝚎\x20','jSfdI','NsDPH','i.json','4977872YhRfar','config','\x201️⃣\x20\x20𝙸𝚜𝚕𝚊𝚖𝚒','ee\x20by\x20repl','Send\x20a\x20ran','data','𝚒𝚛\x20𝚅𝚒𝚍𝚎𝚘\x0a\x0a','sendMessag','9LHPQGj','LkNwi','🔹\x205️⃣\x20\x20𝚂𝚊𝚍\x20𝚅','2️⃣\x20\x20𝙰𝚗𝚒𝚖𝚎\x20𝚅','/video/bab','/video/ani','roject/Sha','stream','axios','iri','/video/sho','🔥\x20*𝙷𝙾𝚃\x20𝚅𝙸𝙳','𝚒𝚍𝚎𝚘\x0a🔹\x203️⃣\x20\x20','\x0a\x0a\x20Notes:-','CUdYa','media','ercontent.','api','14930LEhcZN','\x20𝚅𝚒𝚍𝚎𝚘\x0a🔹\x201️⃣','𝚅𝚒𝚍𝚎𝚘\x0a🔹\x20🔟\x20','\x20me\x20how\x20ma','tskTK','\x0a𝙰\x20𝙿\x20𝙸\x20\x20™📛','𝚢\x20𝚅𝚒𝚍𝚎𝚘\x0a🔹\x20','জেকে\x20কত\x20নি','DjpnQ','/video/fun','3897512kkIppP','𝚎𝚘\x0a🔹\x204️⃣\x20\x20𝚂𝚑','কৃষ্ট\x20বানি','name','18879LQgDtE','/video/hap','exports','\x20সাময়িক\x20ব','QzrfJ','H\x0a\x0a━━━━━━━','𝙴𝙾:','/video/hum','umbers\x20you','𝚂𝚝𝚊𝚝𝚞𝚜\x20𝚅𝚒𝚍','/video/foo','/video/sta','com/shaonp','━━━━━━━━━━','push','\x20𝙲𝙿𝙻\x20𝚅𝚒𝚍𝚎𝚘','/video/kos','িনোদনের\x20জন','get','qpDNT','SyWwG','client','178276quqGeS','𝚒𝚍𝚎𝚘\x0a🔹\x206️⃣\x20\x20','1.0.0','𝚎𝚘\x0a🔹\x208️⃣\x20\x20𝙵𝚞','ny\x20video\x20n','album','🔹\x201️⃣3️⃣\x20\x20𝙻𝚘𝚏𝚒','য়ে\x20পেলতেছ','𝚎𝚘\x0a🔹\x207️⃣\x20\x20𝙵𝚘','ugnlv','https://ra','/video/sad','━━━━\x0a\x0aTell','\x0a𝚃𝙾𝚃𝙰𝙻\x20𝚅𝙸𝙳','body','tus','LgGLn','338AgbKZW','LASH','gcSpL','deo','ি\x20\x0a\x0a💠\x20*𝙾𝚆𝙽','Shaon\x20×\x20UL','𝚘𝚛𝚝\x20𝚅𝚒𝚍𝚎𝚘\x0a','aiyun','\x20message','Kcdfo','handleRepl','্য,আমরা\x20নি','𝚌\x20𝚅𝚒𝚍𝚎𝚘\x0a🔹\x20','messageID','senderID','𝙴𝙾𝚂\x20Ban\x20*\x20','cfupi','create','\x20𝙷𝚞𝚖𝚊𝚢𝚞𝚗\x20𝚂','\x20🎥\x20───╮\x0a\x0a🔹','╭───\x20🎥\x20*𝙰𝙻','/video/cpl','/video/lov','on/main/ap','4️⃣\x20\x20𝙷𝚊𝚙𝚙𝚢\x20𝚅','qgdPP','type'];_0xc667=function(){return _0x2d052a;};return _0xc667();}async function linkanh(_0xeb54a8){const _0x45f219=_0x394e95,_0x2f3fe0={'Kcdfo':function(_0x4f152f,_0x50a135){return _0x4f152f(_0x50a135);},'cfupi':_0x45f219(0x10e),'FKzIh':_0x45f219(0x146)+_0x45f219(0xeb)+_0x45f219(0x116)+_0x45f219(0x132)+_0x45f219(0x10c)+_0x45f219(0x164)+_0x45f219(0xfd),'QzrfJ':_0x45f219(0xec)+'am','CdWaj':_0x45f219(0x10b)+'me','NsDPH':_0x45f219(0x168)+_0x45f219(0x10f),'gcSpL':_0x45f219(0x110)+'rt','qgdPP':_0x45f219(0x147),'tskTK':_0x45f219(0x131)+_0x45f219(0x14b),'jSfdI':_0x45f219(0x130)+_0x45f219(0xe7),'JCBcz':_0x45f219(0x121)+'ny','UrPgk':_0x45f219(0x163)+'e','DjpnQ':_0x45f219(0x162),'LkNwi':_0x45f219(0x10a)+'y','qpDNT':_0x45f219(0x136)+'to','SyWwG':_0x45f219(0xf4)+'i','ugnlv':_0x45f219(0x127)+'py','SXWXa':_0x45f219(0x12d)+_0x45f219(0x154)},_0x5be36a=_0x2f3fe0[_0x45f219(0x156)](require,_0x2f3fe0[_0x45f219(0x15d)]),_0x13c1a5=await _0x5be36a[_0x45f219(0x138)](_0x2f3fe0[_0x45f219(0xf8)]),_0x2f5b77=_0x13c1a5[_0x45f219(0x103)][_0x45f219(0x117)],_0x7acf9a={'1':_0x2f3fe0[_0x45f219(0x12a)],'2':_0x2f3fe0[_0x45f219(0xe1)],'3':_0x2f3fe0[_0x45f219(0xfc)],'4':_0x2f3fe0[_0x45f219(0x14f)],'5':_0x2f3fe0[_0x45f219(0x166)],'6':_0x2f3fe0[_0x45f219(0x11c)],'7':_0x2f3fe0[_0x45f219(0xfb)],'8':_0x2f3fe0[_0x45f219(0xef)],'9':_0x2f3fe0[_0x45f219(0xe6)],'10':_0x2f3fe0[_0x45f219(0x120)],'11':_0x2f3fe0[_0x45f219(0x107)],'12':_0x2f3fe0[_0x45f219(0x139)],'13':_0x2f3fe0[_0x45f219(0x13a)],'14':_0x2f3fe0[_0x45f219(0x145)],'15':_0x2f3fe0[_0x45f219(0xf5)]},_0x16a896=''+_0x2f5b77+_0x7acf9a[_0xeb54a8];return{'p':_0x5be36a,'h':_0x16a896};}
+const axios = require("axios");
+const path = require("path");
+const fs = require("fs");
+
+const BASE_API_URL = "https://album-api-1ez5.onrender.com";
+
+module.exports.config = {
+ name: "album",
+ version: "1.0.1",
+ hasPermssion: 0,
+ credits: "Ullash", //file credits dipto 
+ description: "Manage and view video/photo albums",
+ usePrefix: true,
+ prefix: true,
+ category: "Media",
+ commandCategory: "Media",
+ usages: "Empty to see list, or album [category] to get media.",
+ cooldowns: 5,
+};
+
+module.exports.run = async function ({ api, event, args }) {
+ const { threadID, messageID, senderID } = event;
+
+ const albumOptionsPage1 = [
+ "funny", "islamic", "sad", "anime", "cartoon",
+ "love", "horny", "couple", "flower", "marvel"
+ ];
+ const albumOptionsPage2 = [
+ "aesthetic", "sigma", "lyrics", "cat", "18plus",
+ "freefire", "football", "girl", "friends", "cricket"
+ ];
+
+ const toBold = (text) => text.replace(/[a-z]/g, (c) => String.fromCodePoint(0x1d41a + c.charCodeAt(0) - 97));
+ const toBoldNumber = (num) => String(num).replace(/[0-9]/g, (c) => String.fromCodePoint(0x1d7ec + parseInt(c)));
+
+ const formatOptions = (options, startIndex = 1) =>
+ options.map((opt, i) => `✨ | ${toBoldNumber(i + startIndex)}. ${toBold(opt)}`).join("\n");
+
+ if (args[0] === "2") {
+ const message2 =
+ "💫 𝐂𝐡𝐨𝐨𝐬𝐞 𝐚𝐧 𝐚𝐥𝐛𝐮𝐦 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐲 𝐁𝐚𝐛𝐲 💫\n" +
+ "✺━━━━━━━◈◉◈━━━━━━━✺\n" +
+ formatOptions(albumOptionsPage2, 11) +
+ "\n✺━━━━━━━◈◉◈━━━━━━━✺\n🎯 | 𝐏𝐚𝐠𝐞 [𝟐/𝟐]\n✺━━━━━━━◈◉◈━━━━━━━✺";
+
+ await api.sendMessage(
+ { body: message2 },
+ threadID,
+ (error, info) => {
+ if (!error) {
+ global.client.handleReply.push({
+ name: this.config.name,
+ type: "reply",
+ messageID: info.messageID,
+ author: senderID,
+ link: albumOptionsPage2,
+ });
+ }
+ },
+ messageID
+ );
+ return;
+ }
+
+ if (!args[0] || args[0].toLowerCase() === "list") {
+ api.setMessageReaction("☢️", messageID, () => {}, true);
+
+ const message =
+ "💫 𝐂𝐡𝐨𝐨𝐬𝐞 𝐚𝐧 𝐚𝐥𝐛𝐮𝐦 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐲 𝐁𝐚𝐛𝐲 💫\n" +
+ "✺━━━━━━━◈◉◈━━━━━━━✺\n" +
+ formatOptions(albumOptionsPage1) +
+ `\n✺━━━━━━━◈◉◈━━━━━━━✺\n🎯 | 𝐏𝐚𝐠𝐞 [𝟏/𝟐]\nℹ | 𝐓𝐲𝐩𝐞: ${global.config.PREFIX}album 2 - 𝐧𝐞𝐱𝐭 𝐩𝐚𝐠𝐞\n✺━━━━━━━◈◉◈━━━━━━━✺`;
+
+ await api.sendMessage(
+ { body: message },
+ threadID,
+ (error, info) => {
+ if (!error) {
+ global.client.handleReply.push({
+ name: this.config.name,
+ type: "reply",
+ messageID: info.messageID,
+ author: senderID,
+ link: albumOptionsPage1,
+ });
+ }
+ },
+ messageID
+ );
+ return;
+ }
+
+ const validCategories = [
+ "cartoon", "marvel", "lofi", "sad", "islamic", "funny",
+ "horny", "anime", "love", "baby", "lyrics", "sigma",
+ "aesthetic", "cat", "flower", "freefire", "sex", "girl",
+ "football", "friend", "cricket", "couple", "18plus", "freefire"
+ ];
+
+ const command = args[0].toLowerCase();
+
+ if (!validCategories.includes(command)) {
+ return api.sendMessage(
+ "❌ 𝐈𝐧𝐯𝐚𝐥𝐢𝐝 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐲! 𝐓𝐲𝐩𝐞 '/album' 𝐭𝐨 𝐬𝐞𝐞 𝐥𝐢𝐬𝐭.",
+ threadID,
+ messageID
+ );
+ }
+
+ return api.sendMessage(
+ `📁 𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐲: 𝐚𝐥𝐛𝐮𝐦 - ${command}...`,
+ threadID,
+ messageID
+ );
+};
+
+module.exports.handleReply = async function ({ api, event, handleReply }) {
+ api.unsendMessage(handleReply.messageID);
+
+ const adminID = "100015168369582";
+ const replyNum = parseInt(event.body);
+ if (isNaN(replyNum)) {
+ return api.sendMessage("❌ 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐩𝐥𝐲 𝐰𝐢𝐭𝐡 𝐚 𝐯𝐚𝐥𝐢𝐝 𝐧𝐮𝐦𝐛𝐞𝐫.", event.threadID, event.messageID);
+ }
+
+ const categories = [
+ "funny", "islamic", "sad", "anime", "cartoon",
+ "love", "horny", "couple", "flower", "marvel",
+ "aesthetic", "sigma", "lyrics", "cat", "18plus",
+ "freefire", "football", "girl", "friend", "cricket"
+ ];
+
+ if (replyNum < 1 || replyNum > categories.length) {
+ return api.sendMessage("❌ 𝐈𝐧𝐯𝐚𝐥𝐢𝐝 𝐬𝐞𝐥𝐞𝐜𝐭𝐢𝐨𝐧.", event.threadID, event.messageID);
+ }
+
+ const selectedCategory = categories[replyNum - 1];
+
+ if (
+ (selectedCategory === "horny" || selectedCategory === "18plus") &&
+ event.senderID !== adminID
+ ) {
+ return api.sendMessage("🚫 𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐟𝐨𝐫 𝐭𝐡𝐢𝐬 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐲.", event.threadID, event.messageID);
+ }
+
+ const captions = {
+ funny: "🤣 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐅𝐮𝐧𝐧𝐲 𝐯𝐢𝐝𝐞𝐨",
+ islamic: "😇 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐈𝐬𝐥𝐚𝐦𝐢𝐜 𝐯𝐢𝐝𝐞𝐨",
+ sad: "🥺 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐒𝐚𝐝 𝐯𝐢𝐝𝐞𝐨",
+ anime: "😘 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐀𝐧𝐢𝐦𝐞 𝐯𝐢𝐝𝐞𝐨",
+ cartoon: "😇 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐂𝐚𝐫𝐭𝐨𝐨𝐧 𝐯𝐢𝐝𝐞𝐨",
+ love: "😇 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐋𝐨𝐯𝐞 𝐯𝐢𝐝𝐞𝐨",
+ horny: "🥵 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐇𝐨𝐫𝐧𝐲 𝐯𝐢𝐝𝐞𝐨",
+ couple: "❤️ > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐂𝐨𝐮𝐩𝐥𝐞 𝐯𝐢𝐝𝐞𝐨",
+ flower: "🌸 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐅𝐥𝐨𝐰𝐞𝐫 𝐯𝐢𝐝𝐞𝐨",
+ marvel: "🎯 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐌𝐚𝐫𝐯𝐞𝐥 𝐯𝐢𝐝𝐞𝐨",
+ aesthetic: "🎀 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐀𝐞𝐬𝐭𝐡𝐞𝐭𝐢𝐜 𝐯𝐢𝐝𝐞𝐨",
+ sigma: "🐤 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐒𝐢𝐠𝐦𝐚 𝐯𝐢𝐝𝐞𝐨",
+ lyrics: "🥰 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐋𝐲𝐫𝐢𝐜𝐬 𝐯𝐢𝐝𝐞𝐨",
+ cat: "🐱 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐂𝐚𝐭 𝐯𝐢𝐝𝐞𝐨",
+ freefire: "🎮 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐅𝐫𝐞𝐞𝐟𝐢𝐫𝐞 𝐯𝐢𝐝𝐞𝐨",
+ football: "⚽ > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐅𝐨𝐨𝐭𝐛𝐚𝐥𝐥 𝐯𝐢𝐝𝐞𝐨",
+ girl: "👧 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐆𝐢𝐫𝐥 𝐯𝐢𝐝𝐞𝐨",
+ friend: "👫 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐅𝐫𝐢𝐞𝐧𝐝𝐬 𝐯𝐢𝐝𝐞𝐨",
+ cricket: "🏏 > 𝐍𝐚𝐰 𝐁𝐚𝐛𝐲 𝐂𝐫𝐢𝐜𝐤𝐞𝐭 𝐯𝐢𝐝𝐞𝐨"
+ };
+
+ try {
+ const res = await axios.get(`${BASE_API_URL}/album?type=${selectedCategory}`);
+ const mediaUrl = res.data.data;
+
+ if (!mediaUrl) {
+ return api.sendMessage("⚠️ 𝐍𝐨 𝐜𝐨𝐧𝐭𝐞𝐧𝐭 𝐟𝐨𝐮𝐧𝐝 𝐢𝐧 𝐭𝐡𝐢𝐬 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐲.", event.threadID, event.messageID);
+ }
+
+ const response = await axios({
+ method: 'get',
+ url: mediaUrl,
+ responseType: 'stream'
+ });
+
+ const filename = path.basename(mediaUrl).split("?")[0];
+ const filePath = path.join(__dirname, "cache", `${Date.now()}_${filename}`);
+ const writer = fs.createWriteStream(filePath);
+
+ response.data.pipe(writer);
+
+ writer.on('finish', () => {
+ api.sendMessage({
+ body: captions[selectedCategory] || `🎬 𝐍𝐨𝐰 𝐁𝐚𝐛𝐲 ${selectedCategory} 𝐜𝐨𝐧𝐭𝐞𝐧𝐭`,
+ attachment: fs.createReadStream(filePath)
+ }, event.threadID, () => fs.unlinkSync(filePath), event.messageID);
+ });
+
+ writer.on('error', (err) => {
+ console.error("Write Error:", err);
+ api.sendMessage("❌ 𝐅𝐚𝐢𝐥𝐞𝐝 𝐭𝐨 𝐬𝐞𝐧𝐝 𝐯𝐢𝐝𝐞𝐨.", event.threadID, event.messageID);
+ });
+
+ } catch (err) {
+ console.error("Axios Error:", err.message);
+ return api.sendMessage("❌ 𝐒𝐨𝐦𝐞𝐭𝐡𝐢𝐧𝐠 𝐰𝐞𝐧𝐭 𝐰𝐫𝐨𝐧𝐠. 𝐓𝐫𝐲 𝐚𝐠𝐚𝐢𝐧!", event.threadID, event.messageID);
+ }
+};
