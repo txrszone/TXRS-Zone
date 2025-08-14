@@ -1,17 +1,18 @@
+const axios = require("axios");
+
 module.exports.config = {
     name: "chat",
-    version: "1.0.1",
+    version: "2.0.0",
     hasPermssion: 0,
     credits: "Omor & ChatGPT",
-    description: "Chat with Shapes API with typing effect",
-    commandCategory: "Talk",
+    description: "Chat with Shapes API",
+    commandCategory: "AI",
     usages: "/chat <message>",
     cooldowns: 2,
     dependencies: { "axios": "" }
 };
 
 module.exports.run = async ({ api, event, args }) => {
-    const axios = require("axios");
     const API_KEY = "I38TFQEKOAO1RNA6ONXY5IZQLRZHXYXXOITEYSIRKHM";
     const MODEL_ID = "shapesinc/mwlegendsofficialchatbot-g2rg";
     const API_URL = "https://api.shapes.inc/v1/chat/completions";
@@ -21,14 +22,12 @@ module.exports.run = async ({ api, event, args }) => {
         return api.sendMessage("⚠ দয়া করে /chat এর পরে আপনার মেসেজ লিখুন।", event.threadID, event.messageID);
     }
 
-    // প্রথমে "typing..." মেসেজ পাঠানো
+    // প্রথমে Typing মেসেজ পাঠানো
     api.sendMessage("💬 Typing...", event.threadID, async (err, info) => {
         try {
             const res = await axios.post(API_URL, {
                 model: MODEL_ID,
-                messages: [
-                    { role: "user", content: userMessage }
-                ]
+                messages: [{ role: "user", content: userMessage }]
             }, {
                 headers: {
                     "Authorization": `Bearer ${API_KEY}`,
@@ -36,33 +35,17 @@ module.exports.run = async ({ api, event, args }) => {
                 }
             });
 
-            // Typing মেসেজ আনসেন্ড করা
-            if(info && info.messageID) {
-                api.unsendMessage(info.messageID);
-            }
+            let reply = res.data?.choices?.[0]?.message?.content || "❌ কোনো উত্তর পাওয়া যায়নি।";
 
-            // Bot reply check & send
-            const botReply = res?.data?.choices?.[0]?.message?.content;
-            if(botReply) {
-                // Typing effect simulation: word by word
-                let words = botReply.split(" ");
-                let typedMessage = "";
-                for(let i=0; i<words.length; i++) {
-                    typedMessage += words[i] + " ";
-                    // Update message every 2 words
-                    if(i % 2 === 1 || i === words.length -1){
-                        await new Promise(r => setTimeout(r, 200)); // Delay
-                        api.sendMessage(typedMessage.trim(), event.threadID, event.messageID);
-                    }
-                }
-            } else {
-                api.sendMessage("❌ কোনো উত্তর পাওয়া যায়নি।", event.threadID, event.messageID);
-            }
+            // Typing মেসেজ মুছে ফেলা
+            api.unsendMessage(info.messageID);
+
+            // চূড়ান্ত রিপ্লাই পাঠানো
+            api.sendMessage(reply, event.threadID, event.messageID);
+
         } catch (error) {
-            if(info && info.messageID) {
-                api.unsendMessage(info.messageID);
-            }
-            return api.sendMessage(`❌ ত্রুটি: ${error.message}`, event.threadID, event.messageID);
+            api.unsendMessage(info.messageID);
+            api.sendMessage(`❌ API কল ব্যর্থ: ${error.message}`, event.threadID, event.messageID);
         }
     });
 };
