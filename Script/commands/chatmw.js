@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 module.exports.config = {
-    name: "chat",
+    name: "chatmw",
     version: "1.0.0",
     credits: "Omor & ChatGPT",
     description: "Chat with Shapes API",
