@@ -5,7 +5,7 @@ module.exports.config = {
     version: "1.0.0",
     credits: "Omor & ChatGPT",
     description: "Chat with Shapes API",
-    usages: "/chat <message>",
+    usages: "/chatmw <message>",
     cooldowns: 2
 };
 
@@ -16,7 +16,7 @@ module.exports.run = async function({ api, event, args }) {
 
     const userMessage = args.join(" ");
     if (!userMessage) {
-        return api.sendMessage("⚠ দয়া করে /chat এর পরে আপনার মেসেজ লিখুন।", event.threadID, event.messageID);
+        return api.sendMessage("⚠ দয়া করে /chatmw এর পরে আপনার মেসেজ লিখুন।", event.threadID, event.messageID);
     }
 
     try {
