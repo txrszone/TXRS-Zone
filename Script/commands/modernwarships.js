@@ -69,6 +69,7 @@ module.exports.run = async ({ api, event }) => {
 "https://i.postimg.cc/y6QvQgvY/Image-Download-02-06-2025-01-58-16.jpg",
 "https://i.postimg.cc/JzJxzTmG/Image-Download-02-06-2025-01-58-19.jpg",
 "https://i.postimg.cc/bJ6HBW0F/Image-Download-02-06-2025-01-58-35.jpg",
+"https://i.postimg.cc/4NQZf1mW/IMG-20250825-WA0000.jpg",
 "https://i.postimg.cc/fbDcTDBr/Image-Download-02-06-2025-01-59-21.jpg",
 "https://i.postimg.cc/8cJWn5zj/Image-Download-02-06-2025-01-59-28.jpg",
 "https://i.postimg.cc/NF3ThcKb/Image-Download-02-06-2025-01-59-54.jpg",
