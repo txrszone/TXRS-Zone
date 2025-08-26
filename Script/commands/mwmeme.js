@@ -52,6 +52,8 @@ module.exports.run = async ({ api, event }) => {
 "https://i.postimg.cc/yYb3W5Hs/FB-IMG-1748854764352.jpg",
 "https://i.postimg.cc/J4nBr8Sp/FB-IMG-1748854769313.jpg",
 "https://i.postimg.cc/YqqQvYLf/FB-IMG-1748854777766.jpg",
+"https://i.postimg.cc/Kv69WXZV/1755869112643.jpg",
+"https://i.postimg.cc/YqCGwjSL/1755806643369.jpg",
 "https://i.postimg.cc/sfJpfwxg/FB-IMG-1748854781882.jpg",
 "https://i.postimg.cc/Y08gXqZW/FB-IMG-1748854786320.jpg",
 "https://i.postimg.cc/NMsjd7cd/FB-IMG-1748854160577.jpg",
