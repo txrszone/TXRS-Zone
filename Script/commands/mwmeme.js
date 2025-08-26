@@ -92,6 +92,7 @@ module.exports.run = async ({ api, event }) => {
 "https://github.com/user-attachments/assets/20f45d08-1cba-4813-b847-efad05c644f5",
 "https://github.com/user-attachments/assets/c79182a6-08a2-4071-ba5f-b72182778d83",
 "https://github.com/user-attachments/assets/ec691840-e406-44d1-b306-8302c4db7a0c",
+"https://github.com/user-attachments/assets/751f5845-9e70-4277-947f-620e0a60e944",
 "https://github.com/user-attachments/assets/81494d39-5e29-461b-a1f8-78975141ee46",
 "https://github.com/user-attachments/assets/46fd132f-e6d7-45e4-b046-f79f9587a76c",
 "https://github.com/user-attachments/assets/46b32242-974a-44b1-8f19-c327901b3b55",
